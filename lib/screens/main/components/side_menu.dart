@@ -1,5 +1,7 @@
+import 'package:admin/controllers/home_navigation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart'; // Import Provider
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -8,51 +10,92 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Access the HomeNavigationController
+    final navigationController = Provider.of<HomeNavigationController>(context);
+
     return Drawer(
       child: ListView(
         children: [
           DrawerHeader(
-            child: Image.asset("assets/images/logo.png"),
+           // Add a background color
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: Icon(
+                    Icons.book,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    'Mbooke',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
           ),
           DrawerListTile(
             title: "Dashboard",
             svgSrc: "assets/icons/menu_dashboard.svg",
-            press: () {},
+            press: () {
+              navigationController.screenNumber = 0;
+              Navigator.pop(context);
+            },
           ),
           DrawerListTile(
-            title: "Transaction",
+            title: "Bookings",
             svgSrc: "assets/icons/menu_tran.svg",
-            press: () {},
+            press: () {
+              navigationController.screenNumber = 1;
+              Navigator.pop(context);
+            },
           ),
           DrawerListTile(
-            title: "Task",
+            title: "Services",
             svgSrc: "assets/icons/menu_task.svg",
-            press: () {},
+            press: () {
+              navigationController.screenNumber = 2;
+              Navigator.pop(context);
+            },
           ),
           DrawerListTile(
-            title: "Documents",
+            title: "Statistics",
             svgSrc: "assets/icons/menu_doc.svg",
-            press: () {},
+            press: () {
+              navigationController.screenNumber = 3;
+              Navigator.pop(context);
+            },
           ),
           DrawerListTile(
             title: "Store",
             svgSrc: "assets/icons/menu_store.svg",
-            press: () {},
+            press: () {
+              navigationController.screenNumber = 4;
+              Navigator.pop(context);
+            },
           ),
           DrawerListTile(
-            title: "Notification",
+            title: "Feedback",
             svgSrc: "assets/icons/menu_notification.svg",
-            press: () {},
+            press: () {
+              navigationController.screenNumber = 5;
+              Navigator.pop(context);
+            },
           ),
           DrawerListTile(
             title: "Profile",
             svgSrc: "assets/icons/menu_profile.svg",
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Settings",
-            svgSrc: "assets/icons/menu_setting.svg",
-            press: () {},
+            press: () {
+              navigationController.screenNumber = 6;
+              Navigator.pop(context);
+            },
           ),
         ],
       ),
@@ -63,7 +106,6 @@ class SideMenu extends StatelessWidget {
 class DrawerListTile extends StatelessWidget {
   const DrawerListTile({
     Key? key,
-    // For selecting those three line once press "Command+D"
     required this.title,
     required this.svgSrc,
     required this.press,

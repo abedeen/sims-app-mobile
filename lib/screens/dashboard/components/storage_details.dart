@@ -20,11 +20,14 @@ class StorageDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Storage Details",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
+        Container(
+            padding: EdgeInsets.all(10),
+            color: Colors.white,
+            child: Text(
+              "Processed Bookings",
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              //style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           SizedBox(height: defaultPadding),

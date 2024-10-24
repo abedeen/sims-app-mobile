@@ -1,50 +1,47 @@
+import 'package:flutter/material.dart';
+
 class RecentFile {
-  final String? icon, title, date, size;
+  final String? title, date, size;
+  final IconData? icon;
 
   RecentFile({this.icon, this.title, this.date, this.size});
 }
 
 List demoRecentFiles = [
   RecentFile(
-    icon: "assets/icons/xd_file.svg",
-    title: "XD File",
-    date: "01-03-2021",
-    size: "3.5mb",
+    title: "Brian Molwantwa",
+    date: "brian@gmail.com",
+    size: "plaiting",
   ),
   RecentFile(
-    icon: "assets/icons/Figma_file.svg",
-    title: "Figma File",
-    date: "27-02-2021",
-    size: "19.0mb",
+    title: "Fitzgerald Kebadire",
+    date: "fitzkebadire@tuta.io",
+    size: "plaiting",
   ),
   RecentFile(
-    icon: "assets/icons/doc_file.svg",
-    title: "Document",
-    date: "23-02-2021",
-    size: "32.5mb",
+    title: "Tombo Fisiwe",
+    date: "tombofisiwe@yahoo.com",
+    size: "hair cut",
   ),
   RecentFile(
-    icon: "assets/icons/sound_file.svg",
-    title: "Sound File",
-    date: "21-02-2021",
-    size: "3.5mb",
+    title: "Huma Babylon",
+    date: "humababylon@gmail.com",
+    size: "plaitinghair",
   ),
   RecentFile(
-    icon: "assets/icons/media_file.svg",
-    title: "Media File",
-    date: "23-02-2021",
-    size: "2.5gb",
+    title: "Benoni Ishmael",
+    date: "benoniishmail@borankana.com",
+    size: "haircut",
   ),
   RecentFile(
-    icon: "assets/icons/pdf_file.svg",
-    title: "Sales PDF",
-    date: "25-02-2021",
-    size: "3.5mb",
+    title: "Peter Piano",
+    date: "peterpian@killmonger.com",
+    size: "dreadlocks",
   ),
   RecentFile(
-    icon: "assets/icons/excel_file.svg",
-    title: "Excel File",
-    date: "25-02-2021",
-    size: "34.5mb",
+    
+    title: "Simon Bro",
+    date: "simonbro@yahoo.com",
+    size: "haircut",
   ),
 ];

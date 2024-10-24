@@ -1,7 +1,6 @@
 import 'package:admin/models/recent_file.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
 
@@ -22,7 +21,7 @@ class RecentFiles extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Recent Files",
+            "Recent Bookings",
             style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(
@@ -32,13 +31,13 @@ class RecentFiles extends StatelessWidget {
               // minWidth: 600,
               columns: [
                 DataColumn(
-                  label: Text("File Name"),
+                  label: Text("Client Name"),
                 ),
                 DataColumn(
-                  label: Text("Date"),
+                  label: Text("Email Address"),
                 ),
                 DataColumn(
-                  label: Text("Size"),
+                  label: Text("Service type"),
                 ),
               ],
               rows: List.generate(
@@ -59,11 +58,7 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
       DataCell(
         Row(
           children: [
-            SvgPicture.asset(
-              fileInfo.icon!,
-              height: 30,
-              width: 30,
-            ),
+           
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
               child: Text(fileInfo.title!),
