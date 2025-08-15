@@ -1,5 +1,5 @@
-import 'package:admin/controllers/menu_app_controller.dart';
 import 'package:admin/common/responsive.dart';
+import 'package:admin/home/cubit/menu_app_cubit.dart';
 import 'package:admin/home/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -10,7 +10,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: context.read<MenuAppController>().scaffoldKey,
+      key: context.read<MenuAppCubit>().scaffoldKey,
+      // key: context.read<MenuAppController>().scaffoldKey,
       drawer: SideMenu(),
       body: SafeArea(
         child: Row(

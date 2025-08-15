@@ -1,4 +1,4 @@
-import 'package:admin/controllers/menu_app_controller.dart';
+import 'package:admin/home/cubit/menu_app_cubit.dart';
 import 'package:admin/home/search_field.dart';
 import 'package:admin/home/widgets/profile_card.dart';
 import 'package:admin/common/responsive.dart';
@@ -15,7 +15,7 @@ class Header extends StatelessWidget {
         if (!Responsive.isDesktop(context))
           IconButton(
             icon: Icon(Icons.menu),
-            onPressed: context.read<MenuAppController>().controlMenu,
+            onPressed: context.read<MenuAppCubit>().controlMenu,
           ),
         if (!Responsive.isMobile(context))
           Text("Dashboard", style: Theme.of(context).textTheme.titleLarge),
