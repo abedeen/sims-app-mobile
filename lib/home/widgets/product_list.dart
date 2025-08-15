@@ -1,14 +1,12 @@
-import 'package:admin/models/recent_file.dart';
+import 'package:admin/home/models/product.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../constants.dart';
+import '../../constants.dart';
 
-class RecentFiles extends StatelessWidget {
-  const RecentFiles({
-    Key? key,
-  }) : super(key: key);
+class ProductList extends StatelessWidget {
+  const ProductList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,29 +19,20 @@ class RecentFiles extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Recent Files",
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
+          Text("Products", style: Theme.of(context).textTheme.titleMedium),
           SizedBox(
             width: double.infinity,
             child: DataTable(
               columnSpacing: defaultPadding,
               // minWidth: 600,
               columns: [
-                DataColumn(
-                  label: Text("File Name"),
-                ),
-                DataColumn(
-                  label: Text("Date"),
-                ),
-                DataColumn(
-                  label: Text("Size"),
-                ),
+                DataColumn(label: Text("Produt Name")),
+                DataColumn(label: Text("Date")),
+                DataColumn(label: Text("Price")),
               ],
               rows: List.generate(
-                demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
+                productListData.length,
+                (index) => productDataRow(productListData[index]),
               ),
             ),
           ),
@@ -53,26 +42,22 @@ class RecentFiles extends StatelessWidget {
   }
 }
 
-DataRow recentFileDataRow(RecentFile fileInfo) {
+DataRow productDataRow(Product product) {
   return DataRow(
     cells: [
       DataCell(
         Row(
           children: [
-            SvgPicture.asset(
-              fileInfo.icon!,
-              height: 30,
-              width: 30,
-            ),
+            SvgPicture.asset(product.icon!, height: 30, width: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(fileInfo.title!),
+              child: Text(product.title!),
             ),
           ],
         ),
       ),
-      DataCell(Text(fileInfo.date!)),
-      DataCell(Text(fileInfo.size!)),
+      DataCell(Text(product.date!)),
+      DataCell(Text(product.size!)),
     ],
   );
 }

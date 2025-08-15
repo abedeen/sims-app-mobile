@@ -1,12 +1,12 @@
 import 'package:admin/constants.dart';
 import 'package:flutter/material.dart';
 
-class CloudStorageInfo {
+class KpiCardInfo {
   final String? svgSrc, title, totalStorage;
   final int? numOfFiles, percentage;
   final Color? color;
 
-  CloudStorageInfo({
+  KpiCardInfo({
     this.svgSrc,
     this.title,
     this.totalStorage,
@@ -16,8 +16,9 @@ class CloudStorageInfo {
   });
 }
 
-List demoMyFiles = [
-  CloudStorageInfo(
+// TODO move to fake repository
+List fakeKpiInfo = [
+  KpiCardInfo(
     title: "Documents",
     numOfFiles: 1328,
     svgSrc: "assets/icons/Documents.svg",
@@ -25,7 +26,7 @@ List demoMyFiles = [
     color: primaryColor,
     percentage: 35,
   ),
-  CloudStorageInfo(
+  KpiCardInfo(
     title: "Google Drive",
     numOfFiles: 1328,
     svgSrc: "assets/icons/google_drive.svg",
@@ -33,7 +34,7 @@ List demoMyFiles = [
     color: Color(0xFFFFA113),
     percentage: 35,
   ),
-  CloudStorageInfo(
+  KpiCardInfo(
     title: "One Drive",
     numOfFiles: 1328,
     svgSrc: "assets/icons/one_drive.svg",
@@ -41,7 +42,7 @@ List demoMyFiles = [
     color: Color(0xFFA4CDFF),
     percentage: 10,
   ),
-  CloudStorageInfo(
+  KpiCardInfo(
     title: "Documents",
     numOfFiles: 5328,
     svgSrc: "assets/icons/drop_box.svg",

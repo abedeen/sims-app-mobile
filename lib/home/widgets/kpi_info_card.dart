@@ -1,16 +1,13 @@
-import 'package:admin/models/my_files.dart';
+import 'package:admin/home/models/kpi_card_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../constants.dart';
+import '../../constants.dart';
 
-class FileInfoCard extends StatelessWidget {
-  const FileInfoCard({
-    Key? key,
-    required this.info,
-  }) : super(key: key);
+class KpiInfoCard extends StatelessWidget {
+  const KpiInfoCard({Key? key, required this.info}) : super(key: key);
 
-  final CloudStorageInfo info;
+  final KpiCardInfo info;
 
   @override
   Widget build(BuildContext context) {
@@ -38,40 +35,33 @@ class FileInfoCard extends StatelessWidget {
                 child: SvgPicture.asset(
                   info.svgSrc!,
                   colorFilter: ColorFilter.mode(
-                      info.color ?? Colors.black, BlendMode.srcIn),
+                    info.color ?? Colors.black,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
-              Icon(Icons.more_vert, color: Colors.white54)
+              Icon(Icons.more_vert, color: Colors.white54),
             ],
           ),
-          Text(
-            info.title!,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          ProgressLine(
-            color: info.color,
-            percentage: info.percentage,
-          ),
+          Text(info.title!, maxLines: 1, overflow: TextOverflow.ellipsis),
+          ProgressLine(color: info.color, percentage: info.percentage),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "${info.numOfFiles} Files",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall!
-                    .copyWith(color: Colors.white70),
+                "${info.numOfFiles} total",
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall!.copyWith(color: Colors.white70),
               ),
               Text(
                 info.totalStorage!,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall!
-                    .copyWith(color: Colors.white),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall!.copyWith(color: Colors.white),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
