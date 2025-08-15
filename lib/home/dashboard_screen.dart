@@ -1,8 +1,8 @@
-import 'package:admin/responsive.dart';
+import 'package:admin/common/responsive.dart';
 import 'package:admin/home/widgets/kpis_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../common/constants.dart';
 import 'header.dart';
 
 import 'widgets/product_list.dart';

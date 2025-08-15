@@ -1,8 +1,8 @@
 import 'package:admin/home/widgets/file_info_card_grid_view.dart';
-import 'package:admin/responsive.dart';
+import 'package:admin/common/responsive.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../common/constants.dart';
 
 class KpisWidget extends StatelessWidget {
   const KpisWidget({Key? key}) : super(key: key);

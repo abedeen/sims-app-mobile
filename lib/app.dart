@@ -1,4 +1,4 @@
-import 'package:admin/constants.dart';
+import 'package:admin/common/constants.dart';
 import 'package:admin/controllers/menu_app_controller.dart';
 import 'package:admin/home/home_screen.dart';
 import 'package:flutter/material.dart';

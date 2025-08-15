@@ -1,5 +1,5 @@
-import 'package:admin/constants.dart';
-import 'package:admin/responsive.dart';
+import 'package:admin/common/constants.dart';
+import 'package:admin/common/responsive.dart';
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {

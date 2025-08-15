@@ -3,7 +3,7 @@ import 'package:admin/home/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../constants.dart';
+import '../../common/constants.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList({Key? key}) : super(key: key);

@@ -2,7 +2,7 @@ import 'package:admin/home/models/kpi_card_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../constants.dart';
+import '../../common/constants.dart';
 
 class KpiInfoCard extends StatelessWidget {
   const KpiInfoCard({Key? key, required this.info}) : super(key: key);
