@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+// 🛑 Import the new Login Screen 🛑
+import 'package:admin/screens/login_screen.dart'; 
+
 void main() {
   runApp(MyApp());
 }
@@ -22,14 +25,27 @@ class MyApp extends StatelessWidget {
             .apply(bodyColor: Colors.white),
         canvasColor: secondaryColor,
       ),
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) => MenuAppController(),
-          ),
-        ],
-        child: MainScreen(),
-      ),
+      
+      // 🛑 REPLACE 'home' with 'initialRoute' and 'routes' 🛑
+      
+      // 1. Define the starting point as the Login Screen route
+      initialRoute: '/login', 
+      
+      // 2. Define all available screen routes
+      routes: {
+        // Route for the Login Screen
+        '/login': (context) => const LoginScreen(), 
+        
+        // Route for the Main Dashboard Screen (requires the MenuAppController provider)
+        '/dashboard': (context) => MultiProvider(
+          providers: [
+            ChangeNotifierProvider(
+              create: (context) => MenuAppController(),
+            ),
+          ],
+          child: MainScreen(),
+        ),
+      },
     );
   }
 }
