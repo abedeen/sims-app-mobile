@@ -6,9 +6,22 @@ class ApiService {
   Future<List<dynamic>> getData(String url) async {
     final client = http.Client();
     try {
-      final response = await client.get(Uri.parse(url));
+      final prefs = await SharedPreferences.getInstance();
+      final session = prefs.getString('JSESSIONID');
+      //final response = await client.get(Uri.parse(url));
+      final response = await client.get(
+        Uri.parse(url),
+        headers: {
+          'Accept': 'application/json',
+          if (session != null) 'Cookie': session,
+        },
+      );
       if (response.statusCode == 200) {
-        return jsonDecode(response.body);
+        //return jsonDecode(response.body);
+        final decoded = jsonDecode(response.body);
+
+        // ✅ return the array, not the whole object
+        return decoded['results'] as List<dynamic>;
       } else {
         return [];
       }
