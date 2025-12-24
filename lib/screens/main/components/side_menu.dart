@@ -20,32 +20,32 @@ class SideMenu extends StatelessWidget {
             press: () {},
           ),
           DrawerListTile(
-            title: "Transaction",
+            title: "Active Listings",
             svgSrc: "assets/icons/menu_tran.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: "Task",
+            title: "Orders",
             svgSrc: "assets/icons/menu_task.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: "Documents",
+            title: "Stocks",
             svgSrc: "assets/icons/menu_doc.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: "Store",
+            title: "Postage Labels",
             svgSrc: "assets/icons/menu_store.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: "Notification",
+            title: "Purchase Orders",
             svgSrc: "assets/icons/menu_notification.svg",
             press: () {},
           ),
           DrawerListTile(
-            title: "Profile",
+            title: "Online Accounts",
             svgSrc: "assets/icons/menu_profile.svg",
             press: () {},
           ),
